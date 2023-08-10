@@ -20,7 +20,8 @@ export default function RegisterPage() {
       if (user.username) navigate('/')}, [user, navigate])
 
 
-      async function handleRegisterData() {
+      async function handleRegisterData(event:FormEvent<HTMLFormElement>) {
+        event.preventDefault()
         const response = await fetch('https://matrix-fakebook-123.onrender.com/api/register', {
           method: "POST",
           headers: {
@@ -38,6 +39,7 @@ export default function RegisterPage() {
         if (response.ok){
           const data = await response.json()
           console.log(data)
+          setUser({username:usernameField.current!.value, token:''})
         } else window.alert("Register Failed")
       }
 
@@ -49,7 +51,7 @@ export default function RegisterPage() {
         firstNameField.current!.value = ''
         lastNameField.current!.value
       }
-
+console.log(resetForm)
 
     return (
       <>
