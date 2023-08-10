@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+
+.app{
+  padding:0;
+}
+
+.header{
+  border-bottom: 1px solid white;
+  background-color: black;
+}
+
+.sidebar{
+  width: 120px;
+  margin: 5px;
+  position: sticky;
+  top:62px;
+  align-self: flex-start;
+  align-items: start;
+}
+
+.sidebar a:hover{
+  color:hotpink;
+}
+
+.sidebar a:visited{
+  color: blueviolet
+}
